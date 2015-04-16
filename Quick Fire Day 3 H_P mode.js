@@ -10,30 +10,24 @@ var masterArray = [one, two, three, four, five, six];
 console.log(masterArray);
 
 
-function addIt (array) {
-	newArray = [];
-	for (var k=0; k<array.length; k++){
-		newArray[k]=array[k]+1;
+function addIt (value) {
+	value += 1;
 	}
-	return newArray;
+	return value;
 }
 
-function multiplyIt (array) {
-	newArray2 = [];
-	for (var l=0; l<array.length; l++){
-		newArray[l]=array[l]+1;
+function multiplyIt (value) {
+	value *= 2;
 	}
-	return newArray2;
+	return value;
 }
 
 
 
 for (var i = 0; i<masterArray.length; i++ ) {
 	for (var j = 0; j<masterArray[i].length; j++) {
-		masterArray[i][j]= addIt(masterArray[i][j]);
-		masterArray[i][j]= multiplyIt(masterArray[i][j]);
+		masterArray[i][j]= multiplyIt(addIt(masterArray[i][j]));
 	}
 }
 
 console.log(masterArray);
-
